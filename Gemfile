@@ -22,7 +22,7 @@ gem 'inherited_resources'
 gem 'has_scope'
 
 gem 'kaminari'
-gem 'bootstrap_kaminari', :git => 'git://github.com/dleavitt/bootstrap_kaminari.git'
+gem 'bootstrap_kaminari', :git => 'https://github.com/dleavitt/bootstrap_kaminari.git'
 
 group :assets do
   gem 'less-rails'
@@ -55,8 +55,8 @@ group :development do
 end
 
 group :development, :test do
-  gem 'factory_girl_rails'
-  gem 'ffaker'
+  #gem 'factory_girl_rails'
+  #gem 'ffaker'
 end
 
 
