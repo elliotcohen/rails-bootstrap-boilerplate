@@ -16,3 +16,23 @@
 //
 // Example:
 // @linkColor: #ff0000;
+@blue: #00A1B2;
+@blueDark: #006873; 
+
+.navbar-inner {
+    #gradient.vertical(@white, darken(@white, 5%));
+    .box-shadow(inset 0px 1px 1px @grayLight);
+    padding:20px 0px;
+}
+.hero-unit {
+    background:url(../images/landing.jpg);
+    color:@white;
+    background-size: 100%;
+    .border-radius(0px);
+    height:500px;
+    padding-top:120px;
+    .headline img {margin-top:-20px;}
+}
+.content {
+    margin-top:60px;
+}
