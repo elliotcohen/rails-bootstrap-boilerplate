@@ -1,8 +1,8 @@
 GIT
-  remote: git://github.com/dleavitt/bootstrap_kaminari.git
-  revision: 38960ccdfc6baadaeb5195b07772e9c5cf78ddfe
+  remote: https://github.com/dleavitt/bootstrap_kaminari.git
+  revision: b83d5e4d1996f84a5f2dcac110c998cf5ab67c3e
   specs:
-    bootstrap_kaminari (0.0.2)
+    bootstrap_kaminari (0.0.3)
       haml (>= 3.1.0)
       kaminari (>= 0.12.4)
       rails (>= 3.1.0)
@@ -41,7 +41,6 @@ GEM
     activesupport (3.2.2)
       i18n (~> 0.6)
       multi_json (~> 1.0)
-    archive-tar-minitar (0.5.2)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
@@ -53,7 +52,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.2.0)
-    columnize (0.3.6)
     commonjs (0.2.5)
     delayed_job (3.0.1)
       activesupport (~> 3.0)
@@ -116,8 +114,6 @@ GEM
       actionpack (>= 3.1)
       less (~> 2.0.7)
     libv8 (3.3.10.4)
-    linecache19 (0.5.12)
-      ruby_core_source (>= 0.1.4)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -127,7 +123,6 @@ GEM
     mocha (0.10.5)
       metaclass (~> 0.0.1)
     multi_json (1.1.0)
-    mysql2 (0.3.11)
     open4 (1.3.0)
     orm_adapter (0.0.6)
     polyglot (0.3.3)
@@ -172,16 +167,6 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.9.0)
-    ruby-debug-base19 (0.11.25)
-      columnize (>= 0.3.1)
-      linecache19 (>= 0.5.11)
-      ruby_core_source (>= 0.1.4)
-    ruby-debug19 (0.11.6)
-      columnize (>= 0.3.1)
-      linecache19 (>= 0.5.11)
-      ruby-debug-base19 (>= 0.11.19)
-    ruby_core_source (0.1.5)
-      archive-tar-minitar (>= 0.5.2)
     ruby_gntp (0.3.4)
     simple-navigation (3.7.0)
       activesupport (>= 2.3.2)
@@ -238,11 +223,9 @@ DEPENDENCIES
   kaminari
   less-rails
   mocha
-  mysql2
   rails (= 3.2.2)
   rb-fsevent
   rspec-rails
-  ruby-debug19
   ruby_gntp
   simple-navigation
   simple_form

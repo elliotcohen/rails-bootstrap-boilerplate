@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.2'
 
-gem 'mysql2'
-
 gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
 gem 'simple_form'
@@ -22,7 +20,7 @@ gem 'inherited_resources'
 gem 'has_scope'
 
 gem 'kaminari'
-gem 'bootstrap_kaminari', :git => 'git://github.com/dleavitt/bootstrap_kaminari.git'
+gem 'bootstrap_kaminari', :git => 'https://github.com/dleavitt/bootstrap_kaminari.git'
 
 group :assets do
   gem 'less-rails'
@@ -51,7 +49,6 @@ end
 
 group :development do
   gem 'yui-compressor', :require => 'yui/compressor'
-  gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
 group :development, :test do
