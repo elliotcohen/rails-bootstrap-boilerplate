@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.2'
 
-gem 'mysql2'
-
 gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
 gem 'simple_form'
@@ -51,7 +49,6 @@ end
 
 group :development do
   gem 'yui-compressor', :require => 'yui/compressor'
-  gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
 group :development, :test do
