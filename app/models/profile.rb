@@ -1,6 +1,10 @@
 class Profile < ActiveRecord::Base
 
   belongs_to :user, inverse_of: :profile 
-  attr_accessible :full_name, :dob, :city, :country
+  has_one :address
+  
+  attr_accessible :first_name, :last_name, :dob, :social
   validates_uniqueness_of :user_id
+  
+  attr_accessible :first_name, :last_name, 
 end
