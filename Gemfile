@@ -8,7 +8,7 @@ gem 'simple_form'
 gem "simple-navigation"
 gem 'paperclip'
 gem 'aws-s3'
-gem 'activerecord-sqlite3-adapter'
+gem 'sqlite3'
 
 
 
