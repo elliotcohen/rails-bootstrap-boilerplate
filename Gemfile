@@ -8,8 +8,6 @@ gem 'simple_form'
 gem "simple-navigation"
 gem 'paperclip'
 gem 'aws-s3'
-gem 'sqlite3'
-
 
 
 gem 'delayed_job_active_record'
@@ -57,6 +55,10 @@ end
 group :development, :test do
   #gem 'factory_girl_rails'
   #gem 'ffaker'
+end
+
+group :production do
+  gem 'mysql2'
 end
 
 
