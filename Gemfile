@@ -6,6 +6,8 @@ gem 'haml-rails'
 gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 gem "simple-navigation"
+gem 'paperclip'
+gem 'aws-s3'
 
 
 
