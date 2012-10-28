@@ -1,5 +1,5 @@
 class Insurance < ActiveRecord::Base
-  belongs_to :user, :inverse_of :insurance
+  belongs_to :user
   has_attached_file :front_photo, 
     :storage => :s3,
     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
