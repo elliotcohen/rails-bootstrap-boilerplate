@@ -17,22 +17,56 @@
 // Example:
 // @linkColor: #ff0000;
 @blue: #00A1B2;
-@blueDark: #006873; 
+@blueDark: #006873;
+@green: #80C574;
+@red: #E54A44;
+
+body {color:@grayLight;}
 
 .navbar-inner {
     #gradient.vertical(@white, darken(@white, 5%));
     .box-shadow(inset 0px 1px 1px @grayLight);
+    .box-shadow(inset 0px -2px 4px @grayLighter);
     padding:20px 0px;
+    img {vertical-align:bottom;margin-right:12px;}
 }
 .hero-unit {
     background:url(../images/landing.jpg);
     color:@white;
     background-size: 100%;
     .border-radius(0px);
-    height:500px;
-    padding-top:120px;
+    height: 200px;
+    padding-top: 60px;
     .headline img {margin-top:-20px;}
 }
 .content {
-    margin-top:60px;
+    margin-top:35px;
+}
+.confidence .badge {
+    background:url(../images/icons-conf.png) no-repeat;
+    .square(63px);
+    height: 150px;
+    float: left;
+    padding: 0px;
+    margin: -3px 12px;
+    &.convenience {
+        background-position: -72px 0px;
+    }
+    &.continuity {
+        background-position: -143px 0px;
+    }
+}
+.green {color:@green;}
+.red {color:@red;}
+.blue {color:@blue;}
+.signup-form {
+    padding:12px;
+    position:absolute;
+    width:400px;
+    .border-radius(8px);
+    background-color:rgba(92, 146, 96, 0.3);
+    form input {
+        padding:10px;
+        float:left;
+    }
 }
