@@ -4,7 +4,7 @@ class RegistrationsController < Devise::RegistrationsController
     begin
       u = User.new
     rescue Exception => e
-      logger.log e
+      logger.error e
       raise "kill"
     end
   end
