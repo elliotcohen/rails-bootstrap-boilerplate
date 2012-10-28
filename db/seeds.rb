@@ -4,3 +4,4 @@ ActiveRecord::Base.connection.execute("TRUNCATE profiles")
 10.times do
   FactoryGirl.create :user
 end
+
