@@ -8,11 +8,32 @@
   %fieldset
     %legend Profile
     .inputs
-    =form.simple_fields_for :profile do |profile_form|
-      =profile_form.input :full_name
-      =profile_form.input :dob, start_year: Date.today.year - 90, end_year: Date.today.year - 12, include_blank: true
-      =profile_form.input :city
-      =profile_form.input :country, as: :string
+      =form.simple_fields_for :profile do |profile_form|
+        =profile_form.input :first_name
+        =profile_form.input :last_name
+        =profile_form.input :dob, start_year: Date.today.year - 90, end_year: Date.today.year - 12, include_blank: true
+        =profile_form.input :social
+        =profile_form.input :street
+        =profile_form.input :street2
+        =profile_form.input :city
+        =profile_form.input :state, :collection => states
+  %fieldset
+    %legend Physician
+    .inputs
+      =form.simple_fields_for :physician do |physician_form|
+        =physician_form.input :first_name
+        =physician_form.input :last_name
+        =physician_form.input :phone
+        =physician_form.input :fax
+  %fieldset
+    %legend Insurance
+    .inputs
+      =form.simple_fields_for :insurance do |insurance_form|
+        =insurance_form.input :bin
+        =insurance_form.input :pcn
+        =insurance_form.input :id_number
+        =insurance_form.file_field :front_photo
+        =insurance_form.file_field :back_photo
     
   .form-actions
     =form.button :submit, class: 'btn-primary'

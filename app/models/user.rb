@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   # devise :database_authenticatable, :registerable,
   #        :recoverable, :rememberable, :trackable, :validatable
   # 
-  devise :database_authenticatable, :trackable, :rememberable
+  devise :database_authenticatable, :trackable, :rememberable, :registerable, :trackable, :recoverable
 
   
   # Setup accessible (or protected) attributes for your model

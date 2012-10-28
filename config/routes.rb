@@ -1,7 +1,9 @@
 App::Application.routes.draw do
 
-  root :to => 'dashboard#show'
+  get "dashboard/show"
+  root :to => 'home#index'
   devise_for :users
-  resources :users
+  resource :account, only: [:edit, :update]
+  #resources :users
   
 end
