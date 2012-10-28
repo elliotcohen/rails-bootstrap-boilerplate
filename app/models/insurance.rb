@@ -1,14 +1,12 @@
 class Insurance < ActiveRecord::Base
   belongs_to :user, :inverse_of :insurance
-  has_attached_file 
-    :front_photo, 
+  has_attached_file :front_photo, 
     :storage => :s3,
     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
     :path => ":attachment/:id/:style.:extension",
     :bucket => 'minda_insurance_images'
   
-  has_attached_file 
-    :back_photo,
+  has_attached_file :back_photo,
     :storage => :s3,
     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
     :path => ":attachment/:id/:style.:extension",
