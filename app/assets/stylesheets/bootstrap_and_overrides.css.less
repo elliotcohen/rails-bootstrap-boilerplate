@@ -20,8 +20,26 @@
 @blueDark: #006873;
 @green: #80C574;
 @red: #E54A44;
+@redDark: #640F0C;
+@offWhite: #F8E8D2;
+@navbarHeight:95px;
 
-body {color:@grayLight;}
+@linkColor: @blueDark;
+@btnPrimaryBackground:              @blueDark;
+@btnPrimaryBackgroundHighlight:     spin(@btnPrimaryBackground, 20%);
+
+body {color:@grayLight;padding-top:@navbarHeight;}
+
+h2, h3 {
+    font-family: 'Dawning of a New Day', cursive;
+}
+h2 {font-size:32px;}
+.navbar h3 {
+    display:inline-block;
+    font-size: 22px;
+    margin-bottom: -10px;
+    color:@red;
+}
 
 .navbar-inner {
     #gradient.vertical(@white, darken(@white, 5%));
@@ -37,10 +55,10 @@ body {color:@grayLight;}
     .border-radius(0px);
     height: 200px;
     padding-top: 60px;
-    .headline img {margin-top:-20px;}
+    .headline h2 {font-size:44px;}
 }
 .content {
-    margin-top:35px;
+    margin-top:20px;
 }
 .confidence .badge {
     background:url(../images/icons-conf.png) no-repeat;
@@ -61,12 +79,50 @@ body {color:@grayLight;}
 .blue {color:@blue;}
 .signup-form {
     padding:12px;
-    position:absolute;
-    width:400px;
+    font-size:16px;
     .border-radius(8px);
     background-color:rgba(92, 146, 96, 0.3);
-    form input {
+    form {
+        margin-top: 0px;
+        background: none;
+    }
+    form input.email {
         padding:10px;
         float:left;
     }
+    label {
+        color:@blueDark;
+    }
+    #mc_embed_signup {
+        input.email {
+            display: block;
+            padding: 8px 5px;
+            margin: 0 4% 10px 0;
+            text-indent: 5px;
+            width: 50%;
+            min-width: 130px;
+        }
+        input.button {
+            .btn;
+            .btn-primary;
+            float:left;
+            width:120px;
+        }
+    }
+    .span6:first-child {
+        border-right:1px solid rgba(250,250,250,0.3);
+        padding-right:20px;
+    }
+}
+.showReg {
+    margin: 10px;
+    text-decoration: underline;
+    display: block;
+    font-size: 14px;
+}
+form {
+    margin-top:20px;
+    background:@offWhite;
+    padding:20px;
+    .border-radius(10px);
 }

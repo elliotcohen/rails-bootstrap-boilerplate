@@ -2,7 +2,7 @@
 %html{:lang => "en"}
   %head
     %meta{:charset => "utf-8"}/
-    %title= content_for?(:title) ? yield(:title) : "App"
+    %title= content_for?(:title) ? yield(:title) : "Minda"
     = csrf_meta_tags
     / Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
@@ -14,10 +14,11 @@
       }
     = stylesheet_link_tag "application", :media => "all"
     / Le fav and touch icons
-    %link{:href => "images/favicon.ico", :rel => "shortcut icon"}/
+    %link{:href => "../images/favicon.png", :rel => "shortcut icon"}/
     %link{:href => "images/apple-touch-icon.png", :rel => "apple-touch-icon"}/
     %link{:href => "images/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
     %link{:href => "images/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Dawning+of+a+New+Day", :rel => "stylesheet"}/
 
 
   %body
@@ -26,7 +27,7 @@
         .container
           %a.brand{:href => "#"}
             %img{:src => "../images/logo-mini.png", :alt => "Minda"}
-            %span A simple & safe pharmacy
+            %h3 Finally, a pharmacy for your family
           / %ul.nav
           /   %li
           /     %a{:href => "#"} <i class="icon icon-calendar"></i> How does it work?
@@ -49,7 +50,6 @@
                 %input.search-query.span3{type: "text", placeholder: "Search", name: "query"}
           
 
-    .container
     -if user_signed_in?
       -if @sidebar_items
         =render partial: 'layouts/layout_with_sidebar'
@@ -59,7 +59,7 @@
       %footer
         %p &copy; Company 2012
     -else
-      =render 'layouts/home'
+      = yield
     /
       Le javascript
       \==================================================
