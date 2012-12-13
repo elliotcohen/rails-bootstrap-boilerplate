@@ -23,6 +23,15 @@
 
 body {color:@grayLight;}
 
+.navbar{
+  .caret {
+    border-top-color: @blue;
+  }
+  .brand {
+    color: @black;
+  }
+}
+
 .navbar-inner {
     #gradient.vertical(@white, darken(@white, 5%));
     .box-shadow(inset 0px 1px 1px @grayLight);
@@ -41,7 +50,6 @@ body {color:@grayLight;}
 }
 .content {
     margin-top:35px;
-    margin-left:20px;
 }
 .confidence .badge {
     background:url(../images/icons-conf.png) no-repeat;

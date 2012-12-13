@@ -1,8 +1,8 @@
 class AccountsController < ApplicationController
   
   inherit_resources
-  actions :edit, :update
-
+  actions :edit, :update, :show
+  
   protected
   def resource
     current_user

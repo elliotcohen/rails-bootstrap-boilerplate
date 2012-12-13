@@ -11,8 +11,9 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :profile_attributes
   
   has_many :orders
+  has_many :insurances
   has_one :profile, inverse_of: :user
-  has_and_belongs_to_many :physicians
+  has_many :physicians
   after_create :create_profile, :unless => Proc.new {|record| record.profile.present?}
   accepts_nested_attributes_for :profile
   

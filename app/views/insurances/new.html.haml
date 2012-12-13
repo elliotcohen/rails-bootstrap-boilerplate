@@ -1,0 +1,15 @@
+.offset1.span9
+  =simple_form_for current_user.insurances.new do |form|
+    %fieldset
+      %legend Add a New Insurance Card
+      .inputs
+        =form.input :user_id, :as => :hidden, :value => current_user.id
+        =form.input :bin
+        =form.input :pcn
+        =form.input :id_number
+        =form.file_field :front_photo
+        =form.file_field :back_photo
+
+    .form-actions
+      =form.button :submit, class: 'btn-primary'
+
