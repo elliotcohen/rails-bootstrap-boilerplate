@@ -16,28 +16,26 @@
 //
 // Example:
 // @linkColor: #ff0000;
-@blue: #00A1B2;
+@blue: #09b9de;
 @blueDark: #006873;
 @green: #80C574;
 @red: #E54A44;
 
-body {color:@grayLight;}
+body {color:@blue;}
 
 .navbar{
+  background-color: @blue;
   .caret {
     border-top-color: @blue;
   }
   .brand {
-    color: @black;
+    color: @white;
   }
 }
 
 .navbar-inner {
-    #gradient.vertical(@white, darken(@white, 5%));
-    .box-shadow(inset 0px 1px 1px @grayLight);
-    .box-shadow(inset 0px -2px 4px @grayLighter);
     padding:20px 0px;
-    img {vertical-align:bottom;margin-right:12px;}
+    background-color: @blue;    
 }
 .hero-unit {
     background:url(../images/landing.jpg);
