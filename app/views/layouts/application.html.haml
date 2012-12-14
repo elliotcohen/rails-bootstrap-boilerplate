@@ -2,7 +2,7 @@
 %html{:lang => "en"}
   %head
     %meta{:charset => "utf-8"}/
-    %title= content_for?(:title) ? yield(:title) : "App"
+    %title= content_for?(:title) ? yield(:title) : "Minda"
     = csrf_meta_tags
     / Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
@@ -14,13 +14,15 @@
       }
     = stylesheet_link_tag "application", :media => "all"
     / Le fav and touch icons
-    %link{:href => "images/favicon.ico", :rel => "shortcut icon"}/
+    %link{:href => "../images/favicon.png", :rel => "shortcut icon"}/
     %link{:href => "images/apple-touch-icon.png", :rel => "apple-touch-icon"}/
     %link{:href => "images/apple-touch-icon-72x72.png", :rel => "apple-touch-icon", :sizes => "72x72"}/
     %link{:href => "images/apple-touch-icon-114x114.png", :rel => "apple-touch-icon", :sizes => "114x114"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Dawning+of+a+New+Day", :rel => "stylesheet"}/
 
 
   %body
+<<<<<<< HEAD
     .container.master
       .navbar.navbar-fixed-top.container
         .navbar-inner.container
@@ -34,6 +36,46 @@
         =render 'layouts/home'
         %footer
 
+=======
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.brand{:href => "#"}
+            %img{:src => "../images/logo-mini.png", :alt => "Minda"}
+            %h3 Finally, a pharmacy for your family
+          / %ul.nav
+          /   %li
+          /     %a{:href => "#"} <i class="icon icon-calendar"></i> How does it work?
+          /   %li
+          /     %a{:href => "#"} Who are we?
+          -if user_signed_in?
+            =render_navigation(:level => 1)
+          -if user_signed_in?
+            %ul.nav.pull-right.user_info_nav
+              %li.divider-vertical
+              %li.dropdown
+                %a.dropdown-toggle{:"data-toggle"=>"dropdown", :href=>"#"}
+                  %i.icon-white.icon-user
+                  %b.caret
+                %ul.dropdown-menu
+                  %li=link_to "My Account", edit_account_path
+                  %li=link_to "Logout", destroy_user_session_path
+            -if false # 
+              %form.navbar-search.pull-right{action: search_path}
+                %input.search-query.span3{type: "text", placeholder: "Search", name: "query"}
+          
+
+    -if user_signed_in?
+      -if @sidebar_items
+        =render partial: 'layouts/layout_with_sidebar'
+      -else
+        =render partial: 'layouts/layout_full'
+    
+      %footer
+        %p &copy; Company 2012
+    -else
+      = yield
+>>>>>>> 5048621b75b446336c964f088ef23a0fdd1d37c1
     /
       Le javascript
       \==================================================

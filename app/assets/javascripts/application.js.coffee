@@ -9,4 +9,8 @@ window.App or= {}
 $ ->
   $(".translation_missing").each ()->
     console.error($(this).attr('title'))
+  $(".showReg").on "click", ->
+    $(@).hide()
+    $("#mc_embed_signup").fadeOut 'fast', ->
+      $(".regBtn").fadeIn(300)
   

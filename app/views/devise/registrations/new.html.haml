@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 %h2 Sign up
 = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
   = f.error_notification
@@ -8,3 +9,17 @@
   .actions
     = f.button :submit, "Sign up Now"
 = render "links"
+=======
+.content
+  .container
+    %h2 Sign up
+    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+      = f.error_notification
+      .inputs
+        = f.input :email, :required => true, :autofocus => true
+        = f.input :password, :required => true
+        = f.input :password_confirmation, :required => true
+      .actions
+        = f.button :submit, "Sign up"
+    = render "links"
+>>>>>>> 5048621b75b446336c964f088ef23a0fdd1d37c1
