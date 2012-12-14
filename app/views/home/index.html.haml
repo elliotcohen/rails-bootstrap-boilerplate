@@ -1,49 +1,48 @@
 .hero-unit
   .container
     .row
-      .span7.headline
-        PillPack is pharmacy 
-        %br
-        simplified. We fill, sort, and
-        %br
-        deliver all your meds into
-        %br
-        personalized packets based on
-        %br
-        when you need to take them.
-        %br
-        Our service helps you take the
-        %br
-        right meds at the right time
-        %br
-        without the worry or hassle.
-      .span5
-        %img{:src => }
-        .signup-form
-          <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
-          <div id="mc_embed_signup">
-          <form action="http://joysti.us2.list-manage1.com/subscribe/post?u=3e3392ea826ef7503b3204b08&amp;id=eca775b899" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <label for="mce-EMAIL">Subscribe to our mailing list</label>
-          <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
-          <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-          </form>
-          </div>
-          = link_to('Sign Up', new_user_registration_path)
+      .span6.headline
+        - if user_signed_in?
+          Thanks for joining us!
+          %br
+          We are gearing up to 
+          %br
+          launch our new 
+          %br
+          pharmacy in the
+          %br
+          spring of 2013, please
+          %br
+          stay tuned for updates!
+        - else
+          %span.blue
+            PillPack
+          is pharmacy 
+          %br
+          simplified. We fill, sort, and
+          %br
+          deliver all your meds into
+          %br
+          personalized packets based on
+          %br
+          when you need to take them.
+          %br
+          Our service helps you take the
+          %br
+          right meds at the right time
+          %br
+          without the worry or hassle.
+          %br
+          %br
+          = simple_form_for @user, :as => "user", :url => registration_path("user") do |f|
+            = f.error_notification
+            .inputs
+              = f.input :email, :placeholder => 'Email', :label => false
+              = f.input :password, :input_html => {:type => 'hidden', :value => 'helloworldtest'}, :label => false
+              = f.input :password_confirmation, :input_html => {:type => 'hidden', :value => 'helloworldtest'}, :label => false
+            .actions
+              = f.button :submit, "Sign up for free trial"
 
-          <!--End mc_embed_signup-->
-.container
-  .row
-    .confidence
-      .span4
-        .badge.compliance
-        %h2.green compliance
-        %p  We are a full service pharmacy that fills all of your medications in one roll of simple, sealed, easy-to-use packets, that are packaged by date and time of administration rather than by medication.
-      .span4
-        .badge.convenience
-        %h2.red convenience
-        %p All medications are delivered together at the same time every month, saving you the time and headaches associated with multiple monthly trips to the pharmacy.
-      .span4
-        .badge.continuity
-        %h2.blue continuity of care
-        %p Keep your physician in the loop with our prescriber dashboard, which allows your doctor to monitor your current medication therapy.
- 
+
+      .span5.packet
+        %img{:src => "images/single-packet.png"}

@@ -21,47 +21,19 @@
 
 
   %body
-    .navbar.navbar-fixed-top
-      .navbar-inner
-        .container
-          %a.brand{:href => "#"}
-            %img{:src => "../images/logo-mini.png", :alt => "PillPack"}
-            %span Pharmacy simplified.
-          / %ul.nav
-          /   %li
-          /     %a{:href => "#"} <i class="icon icon-calendar"></i> How does it work?
-          /   %li
-          /     %a{:href => "#"} Who are we?
-          -if user_signed_in?
-            =render_navigation(:level => 1)
-          -if user_signed_in?
-            %ul.nav.pull-right.user_info_nav
-              %li.divider-vertical
-              %li.dropdown
-                %a.blue.dropdown-toggle{:"data-toggle"=>"dropdown", :href=>"#"}
-                  = current_user.email
-                  %b.caret
-                %ul.dropdown-menu
-                  %li=link_to "My Account", account_path
-                  %li=link_to "Edit Profile Info", edit_account_path
-                  %li=link_to "Change Password", edit_user_password_path
-                  %li=link_to "Logout", destroy_user_session_path
-            -if false # 
-              %form.navbar-search.pull-right{action: search_path}
-                %input.search-query.span3{type: "text", placeholder: "Search", name: "query"}
-          
+    .container.master
+      .navbar.navbar-fixed-top.container
+        .navbar-inner.container
+          .container
+            %img{:src => "images/diagonal-hatch.png"}
+            %a.brand{:href => "#"}
+              %img{:src => "../images/logo-mini.png", :width => "75px", :alt => "PillPack"}
+              %span Pharmacy simplified.
 
-    .container
-    -if user_signed_in?
-      -if @sidebar_items
-        =render partial: 'layouts/layout_with_sidebar'
-      -else
-        =render partial: 'layouts/layout_full'
-    
-      %footer
-        %p &copy; Company 2012
-    -else
-      =render 'layouts/home'
+      .container
+        =render 'layouts/home'
+        %footer
+
     /
       Le javascript
       \==================================================

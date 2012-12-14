@@ -20,31 +20,65 @@
 @blueDark: #006873;
 @green: #80C574;
 @red: #E54A44;
+@gray: rgb(90, 90, 90);
+@offwhite: rgb(250,250,250);
 
-body {color:@blue;}
+@font-face
+{
+  font-family: din;
+  src: url('font/din/din-regular.eot');
+  font-weight: normal;
+  font-style: normal;
+  
+}
+
+body {
+  background-color: @grayLighter;
+}
+.container.master {
+}
+.navbar-fixed-top {
+  background-color: @blue;
+}
 
 .navbar{
   background-color: @blue;
   .caret {
     border-top-color: @blue;
+    background-color: @blue;
   }
   .brand {
     color: @white;
+    background-color: @blue;
+    margin-left:20px;
   }
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .navbar-inner {
-    padding:20px 0px;
-    background-color: @blue;    
+    background-color: @grayLighter;    
+    background-image: none;
+    background-repeat: no-repeat;
+    filter: none;
+    box-shadow: none;
+    .container {
+      background-color: @blue;
+    }
 }
 .hero-unit {
-    background:url(../images/landing.jpg);
-    color:@white;
+    color:@gray;
+    background-color:@offwhite;
     background-size: 100%;
     .border-radius(0px);
-    height: 200px;
+    height: 389px;
     padding-top: 60px;
-    .headline img {margin-top:-20px;}
+    .headline {margin-top:20px;padding-left:40px;}
+    .packet {padding-left:40px;}
+    font-size: 28px;
+    line-height: 36px;
+    font-family: din;
+    margin-bottom:0px;
 }
 .content {
     margin-top:35px;
@@ -62,6 +96,10 @@ body {color:@blue;}
     &.continuity {
         background-position: -143px 0px;
     }
+}
+footer{
+  background-color: @blue;
+  height: 200px;
 }
 .green {color:@green;}
 .red {color:@red;}
