@@ -23,6 +23,8 @@ gem 'has_scope'
 
 gem 'kaminari'
 gem 'bootstrap_kaminari', :git => 'https://github.com/dleavitt/bootstrap_kaminari.git'
+gem 'mechanize'
+gem 'nokogiri'
 
 group :assets do
   gem 'less-rails'
